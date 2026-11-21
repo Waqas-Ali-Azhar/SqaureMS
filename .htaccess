@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Only rewrite if the file or directory doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+
+# Route /specific/slug/content/id to content.php
+RewriteRule ^specific/([^/]+)/content/([^/]+)$ content.php?slug=$1&id=$2 [QSA,L]
+
+
+
+# Route /api/slug and anything after it to index.php
+#RewriteRule ^api/slug/?(.*)$ index.php [QSA,L]
+RewriteRule ^specific/([^/]+)$ specific_archive.php?type=specific&slug=$1 [QSA,L]
+
+
+
+
