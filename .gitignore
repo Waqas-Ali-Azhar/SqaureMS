@@ -20,3 +20,4 @@ adminer6/
 /storage/logs/
 /.idea/
 /.vscode/
+*.md
